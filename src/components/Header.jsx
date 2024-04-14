@@ -1,7 +1,17 @@
 import { NavLink } from "react-router-dom";
-
+import { AuthContext } from "../components/provider/AuthProvider";
+import { useContext } from "react";
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () =>{
+        logOut()
+        .then(() => console.log('user logged out successfully'))
+        .catch(error => console.error (error))
+    }
+
     const links = <>
         <li ><NavLink to="/" style={({ isActive }) => {
             return {
@@ -34,8 +44,9 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <NavLink to="/login" className="btn w-[120px] h-[48px] bg-[#23BE0A] hover:bg-[#23BE0A] text-[#FFFFFF]">Log In</NavLink>
-                    <NavLink to="/register" className="btn w-[120px] ml-4 h-[48px] bg-[#59C6D2] hover:bg-[#59C6D2] text-[#FFFFFF]">Register</NavLink>
+                    { user ?
+                    <><span className="font-semibold mr-3">{user.email}</span><a onClick={handleLogOut} className="btn w-[120px] h-[48px] bg-[red] hover:bg-[red] text-[#FFFFFF]">Log out</a></> :
+                    <><NavLink to="/login" className="btn w-[120px] h-[48px] bg-[#23BE0A] hover:bg-[#23BE0A] text-[#FFFFFF]">Log In</NavLink><NavLink to="/register" className="btn w-[120px] ml-4 h-[48px] bg-[#59C6D2] hover:bg-[#59C6D2] text-[#FFFFFF]">Register</NavLink></>}
                 </div>
             </div>
         </>
