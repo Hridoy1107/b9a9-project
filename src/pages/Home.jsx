@@ -1,12 +1,23 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { useEffect, useState } from "react";
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'animate.css';
+import Houses from './Houses';
 
 
 const Home = () => {
+
+    const [houses, setHouses] = useState([])
+
+    useEffect(() => {
+        fetch('houses.json')
+            .then(res => res.json())
+            .then(data => setHouses(data));
+    }, []);
+
+
     return (
         <>
             <div className="mt-10">
@@ -38,8 +49,10 @@ const Home = () => {
                     borderColor: 'lime',
                     height: '4px',
                 }} />
-            <div>
-                
+            <div className="grid grid-cols-3 gap-6 mt-10">
+                {
+                    houses.map(house => <Houses key={house.id} house={house}></Houses>)
+                }
             </div>
         </>
     );

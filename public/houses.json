@@ -1,6 +1,7 @@
 [
       {
         "id": 1,
+        "image": "https://i.ibb.co/HCkSK1z/2150761008.jpg",
         "estate_title": "Luxury Villa with Ocean View",
         "segment_name": "Luxury",
         "description": "Stunning villa with panoramic ocean views, featuring spacious living areas, private pool, and modern amenities.",
@@ -12,6 +13,7 @@
       },
       {
         "id": 2,
+        "image": "https://i.ibb.co/rvKMnsf/2150799705.jpg",
         "estate_title": "Cozy Suburban Home",
         "segment_name": "Standard",
         "description": "Charming suburban home with a large backyard, perfect for families. Close to schools and amenities.",
@@ -23,6 +25,7 @@
       },
       {
         "id": 3,
+        "image": "https://i.ibb.co/LtFMS59/2151003968.jpg",
         "estate_title": "Modern Downtown Loft",
         "segment_name": "Urban",
         "description": "Sleek and stylish loft in the heart of the city. Open floor plan, high ceilings, and city views.",
@@ -34,6 +37,7 @@
       },
       {
         "id": 4,
+        "image": "https://i.ibb.co/BL9bpJd/charming-yellow-house-with-wooden-windows-green-grassy-garden.jpg",
         "estate_title": "Charming Cottage by the Lake",
         "segment_name": "Standard",
         "description": "Quaint cottage nestled by a serene lake. Perfect for weekend getaways or as a vacation home.",
@@ -45,6 +49,7 @@
       },
       {
         "id": 5,
+        "image": "https://i.ibb.co/b1pcWSv/house-1867187-1280.jpg",
         "estate_title": "Rustic Mountain Retreat",
         "segment_name": "Standard",
         "description": "Secluded cabin in the mountains, surrounded by nature. Ideal for outdoor enthusiasts.",
@@ -56,6 +61,7 @@
       },
       {
         "id": 6,
+        "image": "https://i.ibb.co/HXjnXD5/logo-make-11-06-2023-9.jpg",
         "estate_title": "Gated Community Luxury Home",
         "segment_name": "Luxury",
         "description": "Exclusive luxury home in a gated community, boasting high-end finishes and premium amenities.",
@@ -67,6 +73,7 @@
       },
       {
         "id": 7,
+        "image": "https://i.ibb.co/g9zsRT8/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg",
         "estate_title": "Historic Brownstone in Brooklyn",
         "segment_name": "Standard",
         "description": "Beautifully preserved historic brownstone in the heart of Brooklyn. Classic architecture with modern upgrades.",
@@ -78,6 +85,7 @@
       },
       {
         "id": 8,
+        "image": "https://i.ibb.co/JCBKQ0C/san-francisco-210230-1280.jpg",
         "estate_title": "Beachfront Bungalow",
         "segment_name": "Standard",
         "description": "Quaint beachfront bungalow steps away from the sand. Perfect for a relaxed coastal lifestyle.",
@@ -89,6 +97,7 @@
       },
       {
         "id": 9,
+        "image": "https://i.ibb.co/fMXKwxw/pexels-max-vakhtbovycn-8143698.jpg",
         "estate_title": "Elegant Townhouse in London",
         "segment_name": "Luxury",
         "description": "Sophisticated townhouse in central London, with luxurious finishes and prestigious address.",
