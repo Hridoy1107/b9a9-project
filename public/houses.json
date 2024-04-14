@@ -1,0 +1,102 @@
+[
+      {
+        "id": 1,
+        "estate_title": "Luxury Villa with Ocean View",
+        "segment_name": "Luxury",
+        "description": "Stunning villa with panoramic ocean views, featuring spacious living areas, private pool, and modern amenities.",
+        "price": "$1,500,000",
+        "status": "sale",
+        "area": "4000 sq ft",
+        "location": "Malibu, California",
+        "facilities": ["swimming pool", "garden", "gym"]
+      },
+      {
+        "id": 2,
+        "estate_title": "Cozy Suburban Home",
+        "segment_name": "Standard",
+        "description": "Charming suburban home with a large backyard, perfect for families. Close to schools and amenities.",
+        "price": "$300,000",
+        "status": "sale",
+        "area": "2500 sq ft",
+        "location": "Suburbia, Ohio",
+        "facilities": ["backyard", "garage", "patio"]
+      },
+      {
+        "id": 3,
+        "estate_title": "Modern Downtown Loft",
+        "segment_name": "Urban",
+        "description": "Sleek and stylish loft in the heart of the city. Open floor plan, high ceilings, and city views.",
+        "price": "$800,000",
+        "status": "sale",
+        "area": "1800 sq ft",
+        "location": "Downtown, New York",
+        "facilities": ["open floor plan", "high ceilings", "city views"]
+      },
+      {
+        "id": 4,
+        "estate_title": "Charming Cottage by the Lake",
+        "segment_name": "Standard",
+        "description": "Quaint cottage nestled by a serene lake. Perfect for weekend getaways or as a vacation home.",
+        "price": "$250,000",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "Lake District, England",
+        "facilities": ["lakefront view", "fireplace", "porch"]
+      },
+      {
+        "id": 5,
+        "estate_title": "Rustic Mountain Retreat",
+        "segment_name": "Standard",
+        "description": "Secluded cabin in the mountains, surrounded by nature. Ideal for outdoor enthusiasts.",
+        "price": "$350,000",
+        "status": "sale",
+        "area": "2000 sq ft",
+        "location": "Rocky Mountains, Colorado",
+        "facilities": ["mountain view", "wood-burning stove", "deck"]
+      },
+      {
+        "id": 6,
+        "estate_title": "Gated Community Luxury Home",
+        "segment_name": "Luxury",
+        "description": "Exclusive luxury home in a gated community, boasting high-end finishes and premium amenities.",
+        "price": "$2,000,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Beverly Hills, California",
+        "facilities": ["security system", "tennis court", "home theater"]
+      },
+      {
+        "id": 7,
+        "estate_title": "Historic Brownstone in Brooklyn",
+        "segment_name": "Standard",
+        "description": "Beautifully preserved historic brownstone in the heart of Brooklyn. Classic architecture with modern upgrades.",
+        "price": "$900,000",
+        "status": "sale",
+        "area": "2800 sq ft",
+        "location": "Brooklyn, New York",
+        "facilities": ["historic charm", "modern kitchen", "rooftop terrace"]
+      },
+      {
+        "id": 8,
+        "estate_title": "Beachfront Bungalow",
+        "segment_name": "Standard",
+        "description": "Quaint beachfront bungalow steps away from the sand. Perfect for a relaxed coastal lifestyle.",
+        "price": "$600,000",
+        "status": "sale",
+        "area": "1600 sq ft",
+        "location": "Santa Monica, California",
+        "facilities": ["beach access", "sunroom", "deck"]
+      },
+      {
+        "id": 9,
+        "estate_title": "Elegant Townhouse in London",
+        "segment_name": "Luxury",
+        "description": "Sophisticated townhouse in central London, with luxurious finishes and prestigious address.",
+        "price": "$3,500,000",
+        "status": "sale",
+        "area": "3500 sq ft",
+        "location": "Kensington, London",
+        "facilities": ["private garden", "wine cellar", "smart home technology"]
+      }
+    ]
+  
