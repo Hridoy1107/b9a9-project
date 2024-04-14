@@ -9,46 +9,33 @@ const Header = () => {
                 color: isActive ? "green" : "grey",
             };
         }} className=" btn w-[92px] h-[48px]"><span className=" text-lg ">Home</span></NavLink></li>
-        <li><NavLink to="/lbs" style={({ isActive }) => {
+        <li><NavLink to="/update" style={({ isActive }) => {
             return {
                 fontWeight: isActive ? "bold" : "",
                 color: isActive ? "green" : "grey",
             };
-        }} className=" btn w-[148px] h-[48px]"><span className=" text-lg ">Listed Books</span></NavLink></li>
-        <li><NavLink to="/ptr" style={({ isActive }) => {
+        }} className=" btn w-[168px] h-[48px]"><span className=" text-lg ">Update Profile</span></NavLink></li>
+        <li><NavLink to="/user" style={({ isActive }) => {
             return {
                 fontWeight: isActive ? "bold" : "",
                 color: isActive ? "green" : "grey",
             };
-        }} className=" btn w-[160px] h-[48px]"><span className=" text-lg ">Pages to Read</span></NavLink></li>
-        <li ><NavLink to="/writer" style={({ isActive }) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "green" : "grey",
-            };
-        }} className=" btn w-[92px] h-[48px]"><span className=" text-lg ">Writer</span></NavLink></li>
-        <li ><NavLink to="/query" style={({ isActive }) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "green" : "grey",
-            };
-        }} className=" btn w-[92px] h-[48px]"><span className=" text-lg ">Query</span></NavLink></li>
+        }} className=" btn w-[160px] h-[48px]"><span className=" text-lg ">User Profile</span></NavLink></li>
     </>
     return (
         <>
             <div className="navbar bg-base-100 w-[1210px]">
                 <div className="navbar-start">
-                    <h1 className="text-3xl h-[48px] ml-2 font-bold text-transparent bg-clip-text bg-gradient-to-br from-green-400 via-amber-400 to-red-400
-            animate-text">Real Estate</h1>
+                    <h1 className="animate__animated animate__zoomInLeft animate__fast animate__repeat-1 text-3xl h-[48px] ml-2 font-bold text-transparent bg-clip-text bg-gradient-to-br from-green-400 via-amber-400 to-red-400 animate-text">Apple Real Estate</h1>
                 </div>
                 <div className="navbar-center flex">
-                    <ul className="menu menu-horizontal mr-10 px-1 gap-x-4">
+                    <ul className="menu menu-horizontal px-1 gap-x-4">
                         {links}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn w-[120px] h-[48px] bg-[#23BE0A] text-[#FFFFFF]">Log In</a>
-                    <a className="btn w-[120px] ml-4 h-[48px] bg-[#59C6D2] text-[#FFFFFF]">Register</a>
+                    <NavLink to="/login" className="btn w-[120px] h-[48px] bg-[#23BE0A] hover:bg-[#23BE0A] text-[#FFFFFF]">Log In</NavLink>
+                    <NavLink to="/register" className="btn w-[120px] ml-4 h-[48px] bg-[#59C6D2] hover:bg-[#59C6D2] text-[#FFFFFF]">Register</NavLink>
                 </div>
             </div>
         </>
