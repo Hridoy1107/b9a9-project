@@ -31,7 +31,7 @@ const Login = () => {
         <>
             <div>
                 <div className="mx-auto w-1/2">
-                    <h2 className="text-3xl my-10 text-center font-semibold text-blue-600">Please Register</h2>
+                    <h2 className="text-3xl my-10 text-center font-semibold text-blue-600">Please Login</h2>
                     <form onSubmit={handleLogin}>
                         <label className="label">
                             <span className="label-text">Email</span>
