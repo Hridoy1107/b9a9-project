@@ -39,7 +39,10 @@ const Home = () => {
                 <h1 className="animate__animated animate__zoomInDown animate__repeat-1 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-violet-400 to-red-400
             animate-text">Real Estates</h1>
                 <marquee direction="right">
+                    <div className="flex">
                     <h1 className="mt-2 animate__animated animate__zoomInUp animate__repeat-1 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-green-400 to-red-400 animate-text">Choose Yours</h1>
+                    <h1 className="mt-2 ml-[720px] animate__animated animate__zoomInUp animate__repeat-1 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-green-400 to-red-400 animate-text">Choose Yours</h1>
+                    </div>
                 </marquee>
             </div>
             <hr
@@ -49,7 +52,7 @@ const Home = () => {
                     borderColor: 'lime',
                     height: '4px',
                 }} />
-            <div className="grid grid-cols-3 gap-6 mt-10">
+            <div className="grid grid-cols-3 gap-6 mt-10 animate__animated animate__fadeInUp">
                 {
                     houses.map(house => <Houses key={house.id} house={house}></Houses>)
                 }
