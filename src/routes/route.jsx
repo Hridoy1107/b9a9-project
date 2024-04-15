@@ -8,6 +8,7 @@ import PrivateRoute from '../pages/private/PrivateRoute';
 import Details from '../pages/private/Details';
 import User from "../pages/private/User";
 import Update from "../pages/private/Update";
+import About from "../pages/About";
 
 const routes = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <h1>Hi to about</h1>
+                element: <About></About>
             },
             {
                 path: "/details/:id",

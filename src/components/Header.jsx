@@ -68,9 +68,9 @@ const Header = () => {
                 </div>
                 <div className="navbar-end">
                     {user ?
-                        <><span className="font-semibold mr-3">{user.displayName}</span>
-                            <div className="avatar">
-                                <div className="w-12 mr-3 rounded-full">
+                        <>
+                            <div className="mr-3 avatar tooltip tooltip-hover" data-tip={user.displayName}>
+                                <div className="w-12 rounded-full">
                                     <img src={user.photoURL} />
                                 </div>
                             </div>
