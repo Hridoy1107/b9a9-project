@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage";
 import LogIn from "../components/profile/LogIn";
 import Register from "../components/profile/Register";
+import PrivateRoute from '../pages/private/PrivateRoute';
+import Details from '../pages/private/Details';
 
 const routes = createBrowserRouter([
    {
@@ -23,6 +25,11 @@ const routes = createBrowserRouter([
             path:'/register',
             element: <Register></Register>
         },
+        {
+        path: "/details/:id",
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loader: () => fetch('../houses.json')
+      },
     ]
    }, 
 ]);

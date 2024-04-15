@@ -9,7 +9,7 @@ const Houses = ({ house }) => {
 
 
 
-    const { estate_title, segment_name, image, price, status, area, facilities } = house
+    const { id, estate_title, segment_name, image, price, status, area, facilities } = house
     return (
         <>
             <div className=" hover:transform hover:translate-x-2 hover:translate-y-2 card h-[500px] w-[384px] shadow-2xl hover:shadow-2xl bg-slate-200">
@@ -46,7 +46,7 @@ const Houses = ({ house }) => {
                         }} />
                         {
                             user ?
-                            <NavLink to="/details"className="btn my-2 btn-active btn-primary">View Details</NavLink>
+                            <NavLink to={`/details/${id}`}className="btn my-2 btn-active btn-primary">View Details</NavLink>
                             :
                             <NavLink to="/login" className="btn my-2 btn-active btn-primary">View Details</NavLink>
                         }
