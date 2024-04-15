@@ -70,7 +70,7 @@ const Header = () => {
                     {user ?
                         <><span className="font-semibold mr-3">{user.displayName}</span>
                             <div className="avatar">
-                                <div className="w-12 mr-2 rounded-full">
+                                <div className="w-12 mr-3 rounded-full">
                                     <img src={user.photoURL} />
                                 </div>
                             </div>
