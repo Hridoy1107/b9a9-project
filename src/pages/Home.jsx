@@ -6,7 +6,6 @@ import 'swiper/css/autoplay';
 import 'animate.css';
 import Houses from './Houses';
 
-
 const Home = () => {
 
     const [houses, setHouses] = useState([])

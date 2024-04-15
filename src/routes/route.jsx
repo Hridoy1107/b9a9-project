@@ -6,32 +6,41 @@ import LogIn from "../components/profile/LogIn";
 import Register from "../components/profile/Register";
 import PrivateRoute from '../pages/private/PrivateRoute';
 import Details from '../pages/private/Details';
+import User from "../pages/private/User";
 
 const routes = createBrowserRouter([
-   {
-    path:'/',
-    element:<Root></Root>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children: [
-        {
-            path:'/',
-            element: <Home></Home>
-        },
-        {
-            path:'/login',
-            element: <LogIn></LogIn>
-        },
-        {
-            path:'/register',
-            element: <Register></Register>
-        },
-        {
-        path: "/details/:id",
-        element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: () => fetch('../houses.json')
-      },
-    ]
-   }, 
+    {
+        path: '/',
+        element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
+            {
+                path: '/',
+                element: <Home></Home>
+            },
+            {
+                path: '/login',
+                element: <LogIn></LogIn>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            },
+            {
+                path: "/details/:id",
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
+                loader: () => fetch('../houses.json')
+            },
+            {
+                path: "/user",
+                element: <PrivateRoute><User></User></PrivateRoute>,
+            },
+            {
+                path: "/details/:id",
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
+            },
+        ]
+    },
 ]);
 
 export default routes;

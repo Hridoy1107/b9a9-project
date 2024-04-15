@@ -1,14 +1,20 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { useState } from "react";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link, useNavigate  } from "react-router-dom";
+import { FaEye, FaEyeSlash, FaGoogle, FaFacebook, FaGithub } from 'react-icons/fa';
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const { signInWithGoogle, facebookLogin, githubLogin } = useContext(AuthContext);
     const navigate = useNavigate();
+    const notify = () => toast("Log In Successfully");
     const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -35,7 +41,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user);
                 setSuccess('User Created Successfully.')
-                navigate('/');
+                navigate('/user');
 
                 updateProfile(result.user, {
                     displayName: name,
@@ -48,6 +54,35 @@ const Register = () => {
             .catch(error => {
                 console.error(error);
                 setRegisterError(error.message);
+            })
+    }
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    const handleFacebookSignIn = () => {
+        facebookLogin()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    const handleGithubSignIn = () => {
+        githubLogin()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
             })
     }
 
@@ -92,7 +127,8 @@ const Register = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
-                        <input className="btn btn-primary mb-4 w-full" type="submit" value="Register" />
+                        <input onClick={notify} className="btn btn-primary mb-4 w-full" type="submit" value="Register" />
+                        <ToastContainer />
                     </form>
                     {
                         registerError && <p className="text-red-700">{registerError}</p>
@@ -100,6 +136,12 @@ const Register = () => {
                     {
                         success && <p className="text-green-600">{success}</p>
                     }
+                    <h1 className="font-semibold">Register with social accounts</h1>
+                    <div className="flex gap-3 ml-56 my-1">
+                        <div onClick={handleGoogleSignIn} className="btn btn-outline h-12 w-12"><FaGoogle /></div>
+                        <div onClick={handleFacebookSignIn} className="btn btn-outline h-12 w-12"><FaFacebook /></div>
+                        <div onClick={handleGithubSignIn} className="btn btn-outline h-12 w-12"><FaGithub /></div>
+                    </div>
                     <p className="text-center mt-4">Already have an account? <Link className="text-blue-600 font-bold" to="/login">Login</Link></p>
                 </div>
             </div>

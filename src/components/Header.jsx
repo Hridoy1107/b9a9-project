@@ -6,32 +6,12 @@ const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOut()
-        .then(() => console.log('user logged out successfully'))
-        .catch(error => console.error (error))
+            .then(() => console.log('user logged out successfully'))
+            .catch(error => console.error(error))
     }
 
-    const links = <>
-        <li ><NavLink to="/" style={({ isActive }) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "green" : "grey",
-            };
-        }} className=" btn w-[92px] h-[48px]"><span className=" text-lg ">Home</span></NavLink></li>
-        <li><NavLink to="/update" style={({ isActive }) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "green" : "grey",
-            };
-        }} className=" btn w-[168px] h-[48px]"><span className=" text-lg ">Update Profile</span></NavLink></li>
-        <li><NavLink to="/user" style={({ isActive }) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "green" : "grey",
-            };
-        }} className=" btn w-[160px] h-[48px]"><span className=" text-lg ">User Profile</span></NavLink></li>
-    </>
     return (
         <>
             <div className="navbar bg-base-100 w-[1210px]">
@@ -40,16 +20,66 @@ const Header = () => {
                 </div>
                 <div className="navbar-center flex">
                     <ul className="menu menu-horizontal px-1 gap-x-4">
-                        {links}
+                        {
+                            user ?
+                                <>
+                                    <li ><NavLink to="/" style={({ isActive }) => {
+                                        return {
+                                            fontWeight: isActive ? "bold" : "",
+                                            color: isActive ? "green" : "grey",
+                                        };
+                                    }} className=" btn w-[92px] h-[48px]"><span className=" text-lg ">Home</span></NavLink></li>
+                                    <li ><NavLink to="/about" style={({ isActive }) => {
+                                        return {
+                                            fontWeight: isActive ? "bold" : "",
+                                            color: isActive ? "green" : "grey",
+                                        };
+                                    }} className=" btn w-[92px] h-[48px]"><span className=" text-lg ">About</span></NavLink></li>
+                                    <li><NavLink to="/update" style={({ isActive }) => {
+                                        return {
+                                            fontWeight: isActive ? "bold" : "",
+                                            color: isActive ? "green" : "grey",
+                                        };
+                                    }} className=" btn w-[168px] h-[48px]"><span className=" text-lg ">Update Profile</span></NavLink></li>
+                                    <li><NavLink to="/user" style={({ isActive }) => {
+                                        return {
+                                            fontWeight: isActive ? "bold" : "",
+                                            color: isActive ? "green" : "grey",
+                                        };
+                                    }} className=" btn w-[160px] h-[48px]"><span className=" text-lg ">User Profile</span></NavLink></li>
+                                </> :
+                                <>
+                                    <li ><NavLink to="/" style={({ isActive }) => {
+                                        return {
+                                            fontWeight: isActive ? "bold" : "",
+                                            color: isActive ? "green" : "grey",
+                                        };
+                                    }} className=" btn w-[92px] h-[48px]"><span className=" text-lg ">Home</span></NavLink></li>
+                                    <li ><NavLink to="/about" style={({ isActive }) => {
+                                        return {
+                                            fontWeight: isActive ? "bold" : "",
+                                            color: isActive ? "green" : "grey",
+                                        };
+                                    }} className=" btn w-[92px] h-[48px]"><span className=" text-lg ">About</span></NavLink></li>
+                                </>
+                        }
+
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    { user ?
-                    <><span className="font-semibold mr-3">{user.email}</span><a onClick={handleLogOut} className="btn w-[120px] h-[48px] bg-[red] hover:bg-[red] text-[#FFFFFF]">Log out</a></> :
-                    <>
-                    <NavLink to="/login" className="btn w-[120px] h-[48px] bg-[#23BE0A] hover:bg-[#23BE0A] text-[#FFFFFF]">Log In</NavLink>
-                    <NavLink to="/register" className="btn w-[120px] ml-4 h-[48px] bg-[#59C6D2] hover:bg-[#59C6D2] text-[#FFFFFF]">Register</NavLink>
-                    </>}
+                    {user ?
+                        <><span className="font-semibold mr-3">{user.displayName}</span>
+                            <div className="avatar">
+                                <div className="w-12 mr-2 rounded-full">
+                                    <img src={user.photoURL} />
+                                </div>
+                            </div>
+                            <a onClick={handleLogOut} className="btn w-[120px] h-[48px] bg-[red] hover:bg-[red] text-[#FFFFFF]">Log out</a>
+                        </> :
+                        <>
+                            <NavLink to="/login" className="btn w-[120px] h-[48px] bg-[#23BE0A] hover:bg-[#23BE0A] text-[#FFFFFF]">Log In</NavLink>
+                            <NavLink to="/register" className="btn w-[120px] ml-4 h-[48px] bg-[#59C6D2] hover:bg-[#59C6D2] text-[#FFFFFF]">Register</NavLink>
+                        </>}
                 </div>
             </div>
         </>

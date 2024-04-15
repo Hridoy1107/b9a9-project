@@ -2,12 +2,16 @@ import { useContext } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle, FaFacebook, FaGithub } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const { signInUser } = useContext(AuthContext);
+    const [success, setSuccess] = useState('');
+    const { signInUser, signInWithGoogle, facebookLogin, githubLogin } = useContext(AuthContext);
     const navigate = useNavigate();
+    const notify = () => toast("Log In Successfully");
 
     const handleLogin = e => {
         e.preventDefault();
@@ -15,11 +19,45 @@ const Login = () => {
         const password = e.target.password.value;
         console.log(email, password);
 
+        setSuccess('');
+
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
+                setSuccess('Login Successfully.')
                 e.target.reset();
                 navigate('/');
+                
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    const handleFacebookSignIn = () => {
+        facebookLogin()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    const handleGithubSignIn = () => {
+        githubLogin()
+            .then(result => {
+                console.log(result.user)
             })
             .catch(error => {
                 console.error(error)
@@ -58,8 +96,18 @@ const Login = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
-                        <input className="btn btn-primary mb-4 w-full" type="submit" value="Login" />
+                        <input onClick={notify} className="btn btn-primary mb-4 w-full" type="submit" value="Login" />
+                        <ToastContainer />
                     </form>
+                    {
+                        success && <p className="text-green-600">{success}</p>
+                    }
+                    <h1 className="font-semibold">Login with social accounts</h1>
+                    <div className="flex gap-3 ml-56 my-1">
+                        <div onClick={handleGoogleSignIn} className="btn btn-outline h-12 w-12"><FaGoogle /></div>
+                        <div onClick={handleFacebookSignIn} className="btn btn-outline h-12 w-12"><FaFacebook /></div>
+                        <div onClick={handleGithubSignIn} className="btn btn-outline h-12 w-12"><FaGithub /></div>
+                    </div>
                     <p className="text-center mt-4">Already have an account? <Link className="text-blue-600 font-bold" to="/register">Register</Link></p>
                 </div>
             </div>
